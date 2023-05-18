@@ -61,6 +61,7 @@ public class EmployeeServiceDTOClientV1 {
                 .block();
     }
 
+    // TODO ПОСМОТРЕТЬ!!!!
     public EmployeeDTOV1 update(EmployeeDTOV1 updatedEmployeeDTOV1) {
         return webClient.put()
                 .uri(employeeUpdate)
@@ -70,7 +71,7 @@ public class EmployeeServiceDTOClientV1 {
                 .block();
     }
 
-    // TODO ПОСМОТРЕТЬ!!!!!
+    // TODO ПОСМОТРЕТЬ!!!!
 //    public void delete(String nickname) {
 //        webClient.method(HttpMethod.DELETE)
 //                .uri(uriBuilder -> uriBuilder
