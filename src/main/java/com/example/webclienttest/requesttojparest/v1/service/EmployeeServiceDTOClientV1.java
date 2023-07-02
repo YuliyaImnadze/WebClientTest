@@ -61,7 +61,6 @@ public class EmployeeServiceDTOClientV1 {
                 .block();
     }
 
-    // TODO ПОСМОТРЕТЬ!!!!
     public EmployeeDTOV1 update(EmployeeDTOV1 updatedEmployeeDTOV1) {
         return webClient.put()
                 .uri(employeeUpdate)
@@ -70,19 +69,6 @@ public class EmployeeServiceDTOClientV1 {
                 .bodyToMono(EmployeeDTOV1.class)
                 .block();
     }
-
-    // TODO ПОСМОТРЕТЬ!!!!
-//    public void delete(String nickname) {
-//        webClient.method(HttpMethod.DELETE)
-//                .uri(uriBuilder -> uriBuilder
-//                        .path(employeeDelete)
-//                        .queryParam("nickname", nickname)
-//                        .build())
-//                .bodyValue()
-//                .retrieve()
-//                .bodyToMono(Void.class)
-//                .block();
-//    }
 
     public void delete(String nickname) {
         webClient.delete()
@@ -95,55 +81,16 @@ public class EmployeeServiceDTOClientV1 {
                 .block();
     }
 
-//    public void delete(String nickname) {
-//        webClient.delete()
-//                .uri("/delete/?nickname={nickname}", nickname)
+
+    // в том случае, если потребуется удаление при передаче объекта в метод (при ebClient.delete() передается только queryParam)
+//    public void delete(EmployeeDTOV1 updatedEmployeeDTOV1) {
+//        webClient.method(HttpMethod.DELETE)
+//                .uri(employeeDelete)
+//                .bodyValue(updatedEmployeeDTOV1)
 //                .retrieve()
 //                .bodyToMono(Void.class)
 //                .block();
 //    }
 
 
-
-//    public void delete(EmployeeDTOV1 deletedEmployeeDTOV1) {
-//        return webClient.delete()
-//                .uri("/delete", deletedEmployeeDTOV1.getNickname())
-////                .bodyValue(deletedEmployeeDTOV1)
-//                .retrieve()
-//                .bodyToMono(EmployeeDTOV1.class)
-//                .block();
-//    }
-
-//    public EmployeeDTOV1 delete(EmployeeDTOV1 deletedEmployeeDTOV1) {
-//        return webClient.delete()
-//                .uri(uriBuilder -> uriBuilder
-//                .path("/delete")
-//                        .("nickname", deletedEmployeeDTOV1.getNickname())
-//                .build())
-//                .retrieve()
-//                .bodyToMono(EmployeeDTOV1.class)
-//                .block();
-//    }
-
-
-
-//    HttpClient httpClient = HttpClient.newHttpClient(); // Создание экземпляра HttpClient
-//
-//    HttpRequest request = HttpRequest.newBuilder()
-//            .uri(URI.create("http://localhost:8081/api/v1/employee")) // Установка URI запроса
-//            .build();
-//
-//
-//    public String findAll() {
-//        try {
-//            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-//            System.out.println("Response Body: " + response.body());
-//            return response.body();
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//
-//    }
 }
