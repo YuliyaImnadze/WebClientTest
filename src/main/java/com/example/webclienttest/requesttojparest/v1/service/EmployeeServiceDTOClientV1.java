@@ -4,7 +4,6 @@ package com.example.webclienttest.requesttojparest.v1.service;
 import com.example.webclienttest.requesttojparest.v1.dto.EmployeeDTOV1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
